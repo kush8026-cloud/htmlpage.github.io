@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sally Branders - Resume</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .resume-container {
+            width: 100%;
+            max-width: 800px;
+            background-color: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .header-section {
+            background-color: #12727a;
+            display: flex;
+            flex-direction: column;
+        }
+        .top-header {
+            display: flex;
+            align-items: center;
+            padding: 20px; /* Reduced padding */
+            padding-bottom: 20px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M 0 100 C 50 50, 100 80, 100 20 L 100 100 L 0 100" fill="%234dc3c4"/></svg>');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-position: bottom;
+            position: relative;
+        }
+        .profile-pic-container {
+            width: 120px; /* Reduced image size */
+            height: 120px;
+            min-width: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 0 0 4px #fff;
+            position: relative;
+            z-index: 2;
+        }
+        .profile-pic {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .name-and-title {
+            margin-left: 20px; /* Reduced margin */
+            color: #fff;
+            z-index: 2;
+        }
+        .name-and-title h1, .name-and-title h2 {
+            margin: 0;
+        }
+        .name-and-title h1 {
+            font-size: 2rem; /* Reduced font size */
+            font-weight: 700;
+        }
+        .name-and-title h2 {
+            font-size: 1.25rem; /* Reduced font size */
+            font-weight: 400;
+            opacity: 0.9;
+        }
+        .main-content {
+            display: flex;
+        }
+        .left-column {
+            flex: 1;
+            padding: 30px; /* Reduced padding */
+            padding-right: 15px; /* Reduced padding */
+            background-color: #e6f6f7;
+            color: #333;
+        }
+        .right-column {
+            flex: 2;
+            padding: 30px; /* Reduced padding */
+            padding-left: 15px; /* Reduced padding */
+        }
+        .section-title {
+            font-size: 1.1rem; /* Reduced font size */
+            font-weight: 700;
+            color: #12727a;
+            margin-bottom: 10px; /* Reduced margin */
+            text-transform: uppercase;
+        }
+        .contact-info p {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px; /* Reduced margin */
+            font-size: 0.85rem; /* Reduced font size */
+            color: #444;
+        }
+        .contact-info svg {
+            margin-right: 8px; /* Reduced margin */
+            width: 16px; /* Reduced icon size */
+            height: 16px;
+            color: #12727a;
+        }
+        .summary-text {
+            font-size: 0.85rem; /* Reduced font size */
+            line-height: 1.4; /* Reduced line height */
+            color: #444;
+        }
+        .skills-list, .languages-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .skills-list li, .languages-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 6px; /* Reduced margin */
+            font-size: 0.8rem; /* Reduced font size */
+            color: #444;
+        }
+        .skills-list li svg, .languages-list li svg {
+            margin-right: 6px; /* Reduced margin */
+            color: #12727a;
+            width: 12px; /* Reduced icon size */
+            height: 12px;
+        }
+        .languages-list li span {
+            font-weight: 600;
+        }
+        .experience-item, .education-item {
+            margin-bottom: 20px; /* Reduced margin */
+        }
+        .experience-item h3, .education-item h3 {
+            font-size: 1rem; /* Reduced font size */
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 4px; /* Reduced margin */
+        }
+        .experience-item p, .education-item p {
+            margin: 0;
+            font-size: 0.85rem; /* Reduced font size */
+            color: #666;
+        }
+        .experience-item ul {
+            list-style-type: none;
+            padding-left: 15px; /* Reduced padding */
+            margin-top: 8px; /* Reduced margin */
+        }
+        .experience-item ul li {
+            position: relative;
+            margin-bottom: 6px; /* Reduced margin */
+            font-size: 0.8rem; /* Reduced font size */
+            color: #555;
+            line-height: 1.3; /* Reduced line height */
+        }
+        .experience-item ul li::before {
+            content: '•';
+            position: absolute;
+            left: -12px; /* Adjusted position */
+            color: #12727a;
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <div class="header-section">
+            <div class="top-header">
+                <div class="profile-pic-container">
+                    <img src="https://ibb.co/Y4qNTRpx/sakshita.jpg" alt="Sakshita Raj profile picture" class="profile-pic">
+                </div>
+                <div class="name-and-title">
+                    <h1 class="text-white">Sakshita Raj</h1>
+                    <h2 class="text-white">BCA FIRST YEAR</h2>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="left-column">
+                <section>
+                    <h3 class="section-title">Contact</h3>
+                    <div class="contact-info">
+                        <p>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path fill-rule="evenodd" d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.67 6.13a3 3 0 0 1-3.66 0L1.5 8.67zM19.5 5.5h-15a3 3 0 0 0-3 3v.16l10.5 7.42 10.5-7.42V8.5a3 3 0 0 0-3-3z" clip-rule="evenodd" />
+                            </svg>
+                            sakshitaraj09@gmail.com
+                        </p>
+                        <p>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path fill-rule="evenodd" d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.611.521 1.916 1.22l1.455 3.493a3 3 0 0 0 .584 1.15l.39 1.166c.219.654-.047 1.399-.687 1.638l-1.026.376c-.456.167-.853.385-1.22.645a12.183 12.183 0 0 0 8.01 8.01c.26-.367.478-.764.645-1.22l.376-1.026c.239-.64.984-.906 1.638-.687l1.166.39c.475.158.855.457 1.15.584l3.493 1.455c.7.305 1.22 1.056 1.22 1.916V19.5a3 3 0 0 1-3 3h-1.372a3.375 3.375 0 0 1-3.374-3.374 15.15 15.15 0 0 1-9.563-9.563A3.375 3.375 0 0 1 1.5 4.5z" clip-rule="evenodd" />
+                            </svg>
+                            +91 - 9199371046
+                        </p>
+                        <p>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path fill-rule="evenodd" d="M11.54 22.351A8.254 8.254 0 0 1 2.25 10.518c0-4.97 4.482-9.23 11.023-10.236 2.44-.368 4.814-.543 7.03-.516a.75.75 0 0 1 .75.75c-.01 1.024-.265 2.022-.75 2.916-.48.885-1.127 1.65-1.92 2.306-1.579 1.305-2.923 2.871-3.951 4.593A16.484 16.484 0 0 0 11.54 22.351z" clip-rule="evenodd" />
+                                <path d="M12.75 12.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0z" />
+                            </svg>
+                            PATNA, BIHAR
+                        </p>
+                        <p>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.769s.784-1.769 1.75-1.769 1.75.79 1.75 1.769-.783 1.769-1.75 1.769zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                            linkedin/Sakshita.Raj
+                        </p>
+                    </div>
+                </section>
+                <hr style="border: 0; border-top: 1px solid #ccc; margin: 15px 0;"> <section>
+                    <h3 class="section-title">About me</h3>
+                    <p class="summary-text"> First-year BCA student with a foundational understanding of core programming concepts. My excellent communication and teamwork skills, developed through academic projects, complement my fast-learning ability. </p>
+                </section>
+                <hr style="border: 0; border-top: 1px solid #ccc; margin: 15px 0;"> <section>
+                    <h3 class="section-title">Skills</h3>
+                    <ul class="skills-list">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25z" clip-rule="evenodd" />
+                            </svg>
+                            Excel
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25z" clip-rule="evenodd" />
+                            </svg>
+                            PowerPoint
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25z" clip-rule="evenodd" />
+                            </svg>
+                            C/C++
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25z" clip-rule="evenodd" />
+                            </svg>
+                            Problem-Solving
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25z" clip-rule="evenodd" />
+                            </svg>
+                            Team Leadership
+                        </li>
+                    </ul>
+                </section>
+                <hr style="border: 0; border-top: 1px solid #ccc; margin: 15px 0;"> <section>
+                    <h3 class="section-title">Languages</h3>
+                    <ul class="languages-list">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25z" clip-rule="evenodd" />
+                            </svg>
+                            Hindi: <span>Native</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25z" clip-rule="evenodd" />
+                            </svg>
+                            English: <span>Intermediate</span>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+            <div class="right-column">
+                <section>
+                    <h3 class="section-title">INTRODUCTION</h3>
+                    <div class="experience-item">
+                        <ul>
+                            <li> As a first-year BCA student, I'm embarking on a journey to build a robust skill set in computer applications, with a keen interest in the potential of technology to solve real-world problems. I am a fast learner with a genuine enthusiasm for new challenges and a collaborative spirit. Through my initial academic projects, I've already honed my teamwork and communication abilities, which I believe are just as vital as technical skills. I am eager to apply my foundational knowledge in a professional environment, contribute to a forward-thinking team, and continue my growth as a valuable asset in the tech industry </li>
+                        </ul>
+                    </div>
+                </section>
+                <hr style="border: 0; border-top: 1px solid #ccc; margin: 15px 0;"> <section>
+                    <h3 class="section-title">Education</h3>
+                    <div class="education-item">
+                        <h3 class="font-bold">Class 10th</h3>
+                        <p> Ram Manohar Roy Seminary+2, Marks -382(76.4%) </p>
+                        <p>PATNA, BIHAR| 2022</p>
+                    </div>
+			   <div class="education-item">
+                        <h3 class="font-bold">Class 12th</h3>
+                        <p> St. Josephs convent H/S, Marks -457(91.4%) </p>
+                        <p>PATNA, BIHAR | 2024</p>
+                    </div>
+                    <div class="education-item">
+                        <h3 class="font-bold">BACHELOR OF COMPUTER APPLICATIONS</h3>
+                        <p>PATNA WOMENS COLLEGE</p>
+                        <p>PATNA, INDIA | 2025 - 2029</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
